@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Card</title>
+    <meta http-equiv = "Content-Type" content="text/html; charset=utf-8" />
+    <link href="css/mainStyle.css" type="text/css" rel="stylesheet" />
+
+    <script src = "js/card_model.js"></script>
+    <script src = "js/card_controller.js"></script>
+
+    <script src = "js/family_model.js"></script>
+    <script src = "js/family_controller.js"></script>
+
+    <script src = "js/pgeducation_model.js"></script>
+    <script src = "js/pgeducation_controller.js"></script>
+    
+    <script src = "js/education_model.js"></script>
+    <script src = "js/education_controller.js"></script>
+
+    <script src = "js/tabs.js"></script>
+
+    <script src = "js/__init.js"></script>
+  
+</head>
+
+  <body>
+    <div id="allContent">
+	
+		<div id="top">
+			<input type="button" value="Пошук" id="searchButton"/>
+			<input type="button" value="Додати" id="addButton"/>
+			<h3>Створення картки нового працівника</h3>
+			<span id="userName">inspectorName</span>
+			<input type="button" value="Вийти" id="exitButton" />
+		</div>
+		
+		<div id="navigation" class = "tabbed_area">
+			<ul class = "tabs">
+				<li><a href="#" id="tab_1" class="active">Персональна інформація</a></li>
+				<li><a href="#" id="tab_2">Освіта</a></li>
+				<li><a href="#" id="tab_3">Досвід роботи</a></li>
+				<li><a href="#" id="tab_4">Сімейний стан</a></li>
+				<li><a href="#" id="tab_5">Місце проживання</a></li>
+			</ul>
+		</div>
+		
+		<div id="content">
+		
+				<!--Personal Info-->
+				<div id = "content_1" class = "content"> 
+					<div id="leftPart">
+						Прізвище <br />
+						<input type="text" size="40" id="lastName" class = "fields" /><br />
+						Ім&rsquo;я <br />
+						<input type="text" size="40" id="name" class = "fields" /><br />
+						По-батькові <br />
+						<input type="text" size="40" id="middleName" class = "fields" /><br />
+						<p></p>
+						Стать: <br />
+						<input type="radio" name="sex" value="1" id="male" class = "fields" />чоловіча
+                        <input type="radio" name="sex" value="2" id="female" class = "fields" />жіноча<br />
+						<p></p>
+						Військовозабов&rsquo;язаний <br />
+						<input type="radio" name="army" value="1" id="yesArmy" class = "fields"/>так
+                        <input type="radio" name="army" value="2" id="noArmy" class = "fields"/>ні<br />
+					</div>
+			
+					<div id="rightPart">
+						Дата народження <br />
+						<input type="text" size="2" id="dateBirth" class = "fields" />
+							<select name="select" id="monthBirth" class = "fields">
+								<option id="1">Січень</option>
+								<option id="2">Лютий</option>
+								<option id="3">Березень</option>
+								<option id="4">Квітень</option>
+								<option id="5">Травень</option>
+								<option id="6">Червень</option>
+								<option id="7">Липень</option>
+								<option id="8">Серпень</option>
+								<option id="9">Вересень</option>
+								<option id="10">Жовтень</option>
+								<option id="11">Листопад</option>
+								<option id="12">Грудень</option>
+							</select>
+						<input type="text" size="4" id="yearBirth" class = "fields" /><br />
+						Табельний номер <br />
+						<input type="text" size="40" id="tabNumber" class = "fields" /><br />
+						Індивідуальний номер <br />
+						<input type="text" size="40" id="persNumber" class = "fields" /><br />
+						Паспортні дані <br />
+						<input type="text" size="40" id="passport" class = "fields" /><br />
+						Громадянство <br />
+						<input type="text" size="40" id="nation" class = "fields" /><br />
+					</div>
+			</div>
+			<!--End Personal Info-->
+		
+		
+<!--Education-->
+	   <div id = "content_2" class = "content">	
+       
+       <div id="education2">  
+             	<div><span>Назва освiтнього закладу</span><span>Диплом, свiдоцтво(номер)</span><span>Рiк закiнчення</span></div>
+              <div id="form1">
+              	
+              	<div class="education0">
+              		<input class="educationalInstitutionName" value="">
+              		<input class="diplomaSerialNumber" value="">
+              		<input class="endYear" value="">
+              		<button>delete</button>
+              	</div>
+              </div>
+              <div><span>Спецiальнiсть</span><span>Квалiфiкацiя</span><span>Форма навчання</span></div>
+              <div id="form2">
+              	
+              	<div class="education0">
+              		<input class="profession" value="">
+              		<input class="qualification" value="">
+              		<input class="learningForm" value="">
+              	</div>
+              </div>
+              <button id="edu_addField">ADD</button>
+    </div> <!--  end of #education2 -->
+
+    
+
+       
+         <div id="check">
+		 <p>Післядипломна професійна полготовка: навчання в:</p>
+		   <label><input id="graduate" type="checkbox" class="fields" />Аспірантура</label><br />
+		   <label><input id="adjuncture" type="checkbox" class="fields" />Ад&rsquo;юконтура</label><br />
+		   <label><input id="doctor" type="checkbox" class="fields" />Докторонтура</label><br />
+		</div>	   
+          <table id="pgeducation_table">
+           <tr>
+             <th> Назва освітнього, наукового закладку </th>
+             <th> Рік закінчення</th>
+             <th> Науковий ступінь, учене знання </th> 
+             <th></th>
+           </tr>
+  
+           <tbody id = "table_body2"> 
+             
+           
+           
+            <!-- Здесь будет динамически формироваться контент -->
+           <tbody> 
+         </table>
+ 
+  
+             
+             
+         <div id = "add_button2"> 
+          <button  id = "add_pgeducation"> + </button> 
+        </div>   
+      </div>
+<!--End Education-->
+		
+		
+<!--Experience-->
+			<div id = "content_3" class = "content"> 
+				<div id="exp">
+					<div id="expData">
+						Останнє місце роботи<br />
+						<input type="text" size="90" id="lastWork" class = "fields" /><br />
+						Посада <br />
+						<input type="text" size="90" id="profWork" class = "fields" /><br />
+						Дата, причина звільнення<br />
+						<input type="text" size="90" id="reasonLast" class = "fields" /><br />
+						Дані стосовно отримання пенсії<br />
+						<input type="text" size="90" id="pension" class = "fields" /><br />
+					</div>
+				</div>
+			</div>
+<!--End Experience-->
+		
+		
+<!--Family-->
+			<div id = "content_4" class = "content">
+                
+              <table id="family_table">
+                <tr>
+                  <th> Cклад сім'ї </th>
+                  <th> П.І.Б. </th>
+                  <th> Рік народження </th> 
+                  <th></th>
+                </tr>
+      
+               <tbody id = "table_body">               
+                 <!-- Здесь будет динамически формироваться контент -->          
+               <tbody>   
+             </table>
+     
+            <div id = "add_button"> 
+              <button  id = "add_family"> + </button> 
+            </div>
+            
+          </div>
+<!--End family-->
+		
+		
+			<!--Habitation-->
+			<div id = "content_5" class = "content">
+				<div id="homeData">
+					<p>Адреса фактичного місця проживання</p>
+					<p id="detail">(область, місто, район, вулиця, № будинку, № квартири, номер контактного телефону, індекс)</p>
+                    <textarea type="text" cols="85" rows="5" id="residence address" class = "fields" ></textarea><br />
+					<p>Адреса прописки</p>
+                    <textarea type="text" cols="85" rows="5" id="address registration" class = "fields"></textarea>
+				</div>
+			</div>
+			<!--End habitation-->
+		
+		</div>
+		
+		
+		<div id="bottom">
+			<input type="button" value="Переглянути" id="previewButton"/>
+			<input type="button" value="Зберегти" id="saveButton"/>
+		</div>
+	
+	
+		<footer>
+			&copy; All rights reserved, Troy Team, 2013
+		</footer
+		
+	></div>
+	
+</body>
+</html>
