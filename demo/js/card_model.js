@@ -1,6 +1,6 @@
 function CardModel() {
   var content = {};
-  var toCheck = ['name','lastName','middleName','dateBirth','monthBirth','yearBirth','persNumber','passport'];
+  var toCheck = {name:"",lastName:"",middleName:"",dateBirth:"",monthBirth:"",yearBirth:"",persNumber:"",passport:""};
   
   this.setValue = function(key, value) {
     if (value) {	
