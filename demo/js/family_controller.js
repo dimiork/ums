@@ -1,10 +1,21 @@
 
 function FamilyController() {
- 
-  this.init = function() {
 
 	 //создаем экземпляр оббекта модели
     var family_model = new FamilyModel(); 
+
+ 
+  this.init = function() {
+
+  	navigation.addEventListener("click", inittest, false);
+		 function inittest() {
+			console.log("Family Data is saved to Model");
+			family_controller.toModel();
+			//card_controller.fromModel();
+			//card_controller.test()
+		}
+
+	
 	
 	// добавить поля для ввода текста
 	input_data();
@@ -130,7 +141,28 @@ function FamilyController() {
     
 	
 	
-  }  
+  }
+  this.toModel = function() {
+  	
+   		
+	 for (var i = 0; i < table_body.rows.length; i++) {
+		   
+		   var mass_row = [];
+		   
+		   for(var j = 0; j < table_body.rows[i].cells.length - 1; j++) {
+		 
+		     mass_row.push(table_body.rows[i].cells[j].childNodes[0].value);
+		   }
+		   
+	        if (mass_row[0] && mass_row[1] && mass_row[2]) //  не заносить в модель пустую строку ( требуется рефакторинг)
+		      family_model.setValue(table_body.rows[i].rowIndex, mass_row);
+		 
+		 }		
+  
+  }
+  this.returnData = function() {
+  	return { "family": family_model.getValue() };
+  }
 }
   
   

@@ -14,6 +14,13 @@ function EducationController() {
     edu_addField.onclick = function() {
       addField();
     }
+    navigation.addEventListener("click", inittest, false);
+     function inittest() {
+      console.log("Education Data is saved to Model");
+      education_controller.toModel();
+      //card_controller.fromModel();
+      //education_controller.returnData()
+    }
   }
 
   this.toModel = function() {
@@ -55,8 +62,8 @@ function EducationController() {
     }  // end of first cycle
   }
 
-  this.testmo = function() {
-    return education_model.returnData();
+  this.returnData = function() {
+    return { "education": education_model.returnData() };
   }
 
   this.renderEdit = function() {

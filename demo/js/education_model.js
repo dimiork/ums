@@ -2,6 +2,7 @@
 
 
 function EducationModel() {
+  
   var data = {};
   this.save = function(key, value) {
     data[key] = value;
@@ -9,8 +10,6 @@ function EducationModel() {
     console.log(data);
   },
   this.returnData = function(num) {
-      console.log("first return data");
-      console.log(data);
     if(this.isEmpty(data)===true) {
         console.log("get data from DB");
         data = this.testData();

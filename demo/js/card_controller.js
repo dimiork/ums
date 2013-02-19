@@ -16,10 +16,10 @@ function CardController() {
 		*/
 		 navigation.addEventListener("click", inittest, false);
 		 function inittest() {
-			console.log("navigation clicked");
+			console.log("Card Data is saved to Model");
 			card_controller.toModel();
 			//card_controller.fromModel();
-			card_controller.test()
+			//card_controller.test()
 		}
 		
 
@@ -74,6 +74,9 @@ function CardController() {
 	    for (var key in valid) {
 	      valid.style.border = "1px solid #ff0000";
         } 	  
+	}
+	this.returnData = function() {
+		return { "card" : card_model.getValue() } ;
 	}
 	return this;
 }

@@ -1,9 +1,10 @@
 function PgeducationController() {
  
+  //создаем экземпляр оббекта модели
+    var pgeducation_model = new PgeducationModel(); 
   this.init = function() {
 
-	 //создаем экземпляр оббекта модели
-    var pgeducation_model = new PgeducationModel(); 
+	
 	
 	// добавить поля для ввода текста
 	input_data();
@@ -129,6 +130,25 @@ function PgeducationController() {
     
 	
 	
+  }
+  this.toModel = function() {
+  	for (var i = 0; i < table_body2.rows.length; i++) {
+		   
+		   var mass_row = [];
+		   
+		   for(var j = 0; j < table_body2.rows[i].cells.length - 1; j++) {
+		 
+		     mass_row.push(table_body2.rows[i].cells[j].childNodes[0].value);
+		   }
+		   
+	        if (mass_row[0] && mass_row[1] && mass_row[2]) //  не заносить в модель пустую строку ( требуется рефакторинг)
+		     
+			 pgeducation_model.setValue(table_body2.rows[i].rowIndex, mass_row);
+		 
+		 }	
+  }
+  this.returnData = function() {
+  	return { "pgeducation" : pgeducation_model.getValue() };
   }  
 }
   
