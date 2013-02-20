@@ -76,7 +76,7 @@ function CardController() {
         } 	  
 	}
 	this.returnData = function() {
-		return { "card" : card_model.getValue() } ;
+		return { "anketa" : card_model.getValue() } ;
 	}
 	return this;
 }
