@@ -1,0 +1,69 @@
+{
+  "anketa": {
+    "date": "2013-02-14",
+    "INN": "1234567890",
+    "sex": "0",
+    "photo": "photo.jpg",
+    "lastName": "Ivanova",
+    "firstName": "Ekaterina",
+    "middleName": "Petrovna",
+    "birthDate": "1989-03-05",
+    "citizenship": "Ukr",
+    "education": "5",
+    "postgraduate": "3",
+    "adyunkture": "1",
+    "doctoral": "1",
+    "latestJob": "PrivatBank",
+    "profession": "Lawyer",
+    "dateReasonDismissal": "03-03-2013 by own desire",
+    "pensionInfo": "none",
+    "familyStatus": "single",
+    "actualPlace": "Mars",
+    "registrationPlace": "Moon",
+    "serial": "123456",
+    "number": "147",
+    "givenBy": "AND DMY YMVS",
+    "passportDate": "0000-00-00",
+    "army": "0"
+  },
+  "education": [
+    {
+      "educationalInstitutionName": "DDYVS",
+      "diplomaSerialNumber": "5689",
+      "endYear": "2011-00-00",
+      "profession": "Lawyer",
+      "qualification": "Law",
+      "learningForm": "2"
+    },
+    {
+      "educationalInstitutionName": "Nobel Uni",
+      "diplomaSerialNumber": "987",
+      "endYear": "2012-00-00",
+      "profession": "Arbitration administrator",
+      "qualification": "Law",
+      "learningForm": "2"
+    },
+    {
+      "educationalInstitutionName": "DKKA",
+      "diplomaSerialNumber": "744",
+      "endYear": "2012-00-00",
+      "profession": "Advocate",
+      "qualification": "Law",
+      "learningForm": "2"
+    }
+  ],
+  "postgraduate": [
+    {
+      "educationalInstitutionName": "DDYVS",
+      "endYear": "2011-00-00",
+      "degree": "High"
+    }
+  ],
+  "family": [
+    {
+      "familyRelationship": "None",
+      "fullName": "zero",
+      "birthDate": "2011-00-00"
+    }
+  ]
+}
