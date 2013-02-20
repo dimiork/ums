@@ -148,7 +148,7 @@ function PgeducationController() {
 		 }	
   }
   this.returnData = function() {
-  	return { "pgeducation" : pgeducation_model.getValue() };
+  	return { "postgraduate" : pgeducation_model.getValue() };
   }  
 }
   
