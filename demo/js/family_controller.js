@@ -55,9 +55,9 @@ function FamilyController() {
       var cell_3 = row.insertCell(2);
 	  var cell_4 = row.insertCell(3);
 	  
-	  cell_1.innerHTML = "<input type='text' id = 'family_status' value = '' />";
-	  cell_2.innerHTML = "<input type='text' id = 'family_fio' value = '' />";
-	  cell_3.innerHTML = "<input type='text' id = 'family_year' value = '' />";
+	  cell_1.innerHTML = "<input type='text' id = 'familyRelationship' value = '' />";
+	  cell_2.innerHTML = "<input type='text' id = 'fam_fullName' value = '' />";
+	  cell_3.innerHTML = "<input type='text' id = 'fam_birthDate' value = '' />";
 	}
 	
 	
@@ -65,7 +65,7 @@ function FamilyController() {
 
 	function addRow() {
     
-	if (family_status.value && family_fio.value && family_year.value) {
+	if (familyRelationship.value && fam_fullName.value && fam_birthDate.value) {
 		
 	  var row = table_body.insertRow(table_body.rows.length - 1);
 	  
@@ -76,9 +76,9 @@ function FamilyController() {
       	  
  // Динамическое создание и добавление инпутов в ячейки таблицы 
  
-	  cell_1.appendChild(create_cell(family_status.value));
-      cell_2.appendChild(create_cell(family_fio.value));
-      cell_3.appendChild(create_cell(family_year.value));
+	  cell_1.appendChild(create_cell(familyRelationship.value));
+      cell_2.appendChild(create_cell(fam_fullName.value));
+      cell_3.appendChild(create_cell(fam_birthDate.value));
 	  
 	  //добавляем кнопки удаления и редактирования
 	  
@@ -87,9 +87,9 @@ function FamilyController() {
 	
 	 // очищаем поля ввода
 	 
-	 family_status.value = "";
-     family_fio.value = "";
-     family_year.value = "";
+	 familyRelationship.value = "";
+     fam_fullName.value = "";
+     fam_birthDate.value = "";
 		 
     }
 	

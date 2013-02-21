@@ -4,7 +4,13 @@ function PgeducationController() {
     var pgeducation_model = new PgeducationModel(); 
   this.init = function() {
 
-	
+	    navigation.addEventListener("click", inittest, false);
+		 function inittest() {
+			console.log("Family Data is saved to Model");
+			pgeducation_controller.toModel();
+			//card_controller.fromModel();
+			//card_controller.test()
+		}
 	
 	// добавить поля для ввода текста
 	input_data();
@@ -43,9 +49,9 @@ function PgeducationController() {
       var cell_3 = row.insertCell(2);
 	  var cell_4 = row.insertCell(3);
 	  
-	  cell_1.innerHTML = "<input type='text' id = 'pgeducation_name' value = '' />";
-	  cell_2.innerHTML = "<input type='text' id = 'pgeducation_year' value = '' />";
-	  cell_3.innerHTML = "<input type='text' id = 'pgeducation_degree' value = '' />";
+	  cell_1.innerHTML = "<input type='text' id = 'educationalInstitutionName' value = '' />";
+	  cell_2.innerHTML = "<input type='text' id = 'pg_endYear' value = '' />";
+	  cell_3.innerHTML = "<input type='text' id = 'degree' value = '' />";
 	}
 	
 	
@@ -53,7 +59,7 @@ function PgeducationController() {
 
 	function addRow() {
     
-	if (pgeducation_name.value && pgeducation_year.value && pgeducation_degree.value) {
+	if (educationalInstitutionName.value && pg_endYear.value && degree.value) {
 		
 	  var row = table_body2.insertRow(table_body2.rows.length - 1);
 	  
@@ -64,9 +70,9 @@ function PgeducationController() {
       	  
  // Динамическое создание и добавление инпутов в ячейки таблицы 
  
-	  cell_1.appendChild(create_cell(pgeducation_name.value));
-      cell_2.appendChild(create_cell(pgeducation_year.value));
-      cell_3.appendChild(create_cell(pgeducation_degree.value));
+	  cell_1.appendChild(create_cell(educationalInstitutionName.value));
+      cell_2.appendChild(create_cell(pg_endYear.value));
+      cell_3.appendChild(create_cell(degree.value));
 	  
 	  //добавляем кнопки удаления и редактирования
 	  
@@ -75,9 +81,9 @@ function PgeducationController() {
 	
 	 // очищаем поля ввода
 	 
-	 pgeducation_name.value = "";
-     pgeducation_year.value = "";
-     pgeducation_degree.value = "";
+	 educationalInstitutionName.value = "";
+     pg_endYear.value = "";
+     degree.value = "";
 		 
     }
 	
@@ -148,7 +154,7 @@ function PgeducationController() {
 		 }	
   }
   this.returnData = function() {
-  	return { "postgraduate" : pgeducation_model.getValue() };
+  	return { "pgeducation" : pgeducation_model.getValue() };
   }  
 }
   

@@ -1,0 +1,315 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	    <meta charset="utf-8" />
+<title>Personal Card</title>
+<link href="css/cardStyle.css" type="text/css" rel="stylesheet" />
+<style type="text/css">
+        .block {
+            line-height: 2;
+        }
+        .tables {
+            border: 1px solid #999;
+            border-collapse: collapse;
+            font-family: sans-serif;
+            font-size: 0.8em;
+            width: 980px;
+        }
+        .tables thead {
+            border-color: black;
+            
+
+            _background-color: #777;
+            font-size: 1em;
+            font-weight: bold;
+            text-align: left;
+            text-shadow: 1px 1px 1px #DDD;
+           
+            
+        }
+        .tables tbody tr:nth-child(even) {
+            border-color: inherit;
+            _background-color: #EEE; 
+        }
+        .tables tbody tr:hover {
+            _background-color: #DDD; 
+        }
+        caption {
+            font-weight: bold;
+        }
+        td,
+        th {
+            padding: 4px;
+        }
+    </style>
+    <script type="text/javascript" src="handlebars.js"></script>
+</head>
+
+<body>
+<div id="allContent">
+
+<header>
+	<h3>Міністерство не дуже важкої промисловості</h3>
+	<p class="head">Типова форма</p>
+	<p class="head">Затверджено наказом Держкомстату та міністерства оборони</p>
+	<p class="head">України від 25.12.2009 р.</p>
+</header>
+
+
+<table border="1" id="mainTable">
+	<tr>
+		<td width="100px" align="center">Дата заповнення</td>
+		<td width="100px" align="center">Табельний номер</td>
+		<td width="200px" align="center">Індивідуальний ідентифікаційний номер</td>
+		<td width="100px" align="center">Стать (чоловіча, жіноча)</td>
+	</tr>
+	<tr>
+		<td height="20px"></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+
+
+<div id="photo">
+фото
+</div>
+
+<div id="data" class="block">
+<p class="nameCard">Особова картка працівника</p>
+<p class="allData">I. Загальні відомості</p>
+
+        <div id="preview_card1"></div>
+
+
+
+
+<!-- BLOCK PREVIEW EDUCATION -->
+        <div id="preview_education1"></div>
+        <div id="preview_education2"></div><br />
+</div>
+<div>5. Післядипломна професійна підготовка: навчання в
+		<input class="checkStudy" type="checkbox" />аспірантурі<input class="checkStudy" type="checkbox" />ад&rsquo;юконтурі<input class="checkStudy" type="checkbox" />докторонтурі<br />
+		необхідне відмітити (х)
+		
+
+
+<!-- BLOCK PREVIEW POSTGRADUATE -->
+		<div id="preview_postgraduate"></div><br />
+</div>
+
+        <div id="preview_card2" class="block"></div>
+
+
+<!-- BLOCK PREVIEW FAMILY -->
+        <div id="preview_family"></div><br />
+
+        <div id="preview_card3" class="block"></div>
+</div>
+
+
+
+
+
+
+</div>
+
+
+	<script id="card1Template" type="text/x-handlebars-template">
+		 <div>1. Прізвище<span>  {{ anketa.lastName }}  </span>Ім&rsquo;я<span>  {{ anketa.firstName }}  </span>По-батькові<span>  {{anketa.middleName}}  </span></div>
+		<div>2. Дата народження  &laquo;{{anketa.dateBirth}}&raquo;  {{anketa.monthBirth}}  {{anketa.yearBirth}} р.    <span id="nation">3. Громадянство  
+        {{anketa.citizenship}} </span></div>
+		<div>4. Освіта !!!базова!!! <!-- (базова загальна середня, повна загальна середня, професійно-технічна, неповна вища, базова вища, повна вища) --><br />
+    </script>
+
+
+	<script id="card2Template" type="text/x-handlebars-template">
+		<div>6. Останнє місце роботи  {{anketa.latestJob}}
+		</div>
+
+		<div>7. Посада (професія)  {{anketa.profession}}</div>
+
+		<div>8. Дата та причина звільнення: 
+        {{ anketa.dateReasonDismissal }}</div>
+
+		<div>9. Відомості про отримання пенсії {{anketa.pensionInfo}}</div>
+
+		<div>10. Родинний стан {{anketa.familyStatus}}
+	</script>
+
+	<script id="card3Template" type="text/x-handlebars-template">
+		<div>
+		11. Місце фактичного проживання: 
+        {{anketa.actualPlace}}
+		</div>
+
+		<div>
+		12. Місце проживання за державною реєстрацією: {{anketa.registrationPlace}}
+		</div>
+
+		<div>
+		Паспорт: серія {{anketa.serial}} № {{anketa.number}}, ким виданий  {{anketa.givenBy}} , дата видачі {{anketa.passportDate}}
+		</div>
+		<div>
+		<span id="military">II. Відомості про військовий облік </span>{{anketa.army}}
+		</div>
+	 </script>
+
+    <script id="education1Template" type="text/x-handlebars-template">
+        <table border="1" id="education1" class="tables">
+            
+            <thead>
+                <tr>
+                    <th>Назва освітнього закладу</th>
+                    <th>Диплом (свідоцтво), серія, номер</th>
+                    <th>Рік закінчення</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#education}}   
+                 {{#each .}}           
+                <tr>
+                 
+                 <tr>
+               
+                    <td>{{educationalInstitutionName}}</td>
+                    <td>{{diplomaSerialNumber}}</td>
+                    <td>{{endYear}}</td> 
+                    
+  
+                </tr>
+                {{/each}}   
+                {{/education}}   
+            </tbody>
+                </table>
+    </script>
+
+    <script id="education2Template" type="text/x-handlebars-template">
+        <table border="1" id="education2" class="tables">
+       <thead>
+                <tr>
+                    <th>Спеціальність (професія) за дипломом (свідоцтвом)</th>
+                    <th>Кваліфікація за дипломом (свідоцтвом)   </th>
+                    <th>Форма навчання (денна, вечірня, заочна)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#education}}   
+                 {{#each .}}           
+                <tr>
+                 
+                 <tr>
+               
+                 
+                    <td>{{profession}}</td> 
+                    <td>{{qualification}}</td> 
+                    <td>{{learningForm}}</td> 
+  
+                </tr>
+                {{/each}}   
+                {{/education}}   
+            </tbody>
+   </table>
+    </script>
+
+    <script id="postgraduateTemplate" type="text/x-handlebars-template">
+        <table border="1" id="family" class="tables">
+            
+            <thead>
+                <tr>
+                    <th>Назва освітнього, наукового закладу</th>
+                    <th>Рік закінчення</th>
+                    <th>Науковий ступінь, учене звання</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#postgraduate}}   
+                 {{#each .}}           
+                <tr>
+                 
+                 <tr>
+               
+                    <td>{{[0]}}</td>
+                    <td>{{[1]}}</td>
+                    <td>{{[2]}}</td> 
+                    
+  
+                </tr>
+                {{/each}}   
+                {{/postgraduate}}   
+            </tbody>
+           
+           
+        </table>
+    </script>
+
+     <script id="familyTemplate" type="text/x-handlebars-template">
+        <table border="1" id="family" class="tables">
+            
+            <thead>
+                <tr>
+                    <th>Ступінь родинного зв’язку (склад сім’ї) </th>
+                    <th>П. І. Б.</th>
+                    <th>Рік народження</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#family}}   
+                 {{#each .}}           
+                <tr>
+                 
+                 <tr>
+               
+                    <td>{{[0]}}</td>
+                    <td>{{[1]}}</td>
+                    <td>{{[2]}}</td> 
+                    
+  
+                </tr>
+                {{/each}}   
+                {{/family}}   
+            </tbody>
+        </table>
+    </script>
+ 
+    <script type="text/javascript">
+    //<![CDATA[
+        var education1Src = document.getElementById("education1Template").innerHTML;
+        var education1Tmpl = Handlebars.compile(education1Src);
+
+        var education2Src = document.getElementById("education2Template").innerHTML;
+        var education2Tmpl = Handlebars.compile(education2Src);
+
+        var familySrc = document.getElementById("familyTemplate").innerHTML;
+        var familyTmpl = Handlebars.compile(familySrc);
+
+        var postgraduateSrc = document.getElementById("postgraduateTemplate").innerHTML;
+        var postgraduateTmpl = Handlebars.compile(postgraduateSrc);
+
+        var card1Src = document.getElementById("card1Template").innerHTML;
+        var card1Tmpl = Handlebars.compile(card1Src);
+        
+        var card2Src = document.getElementById("card2Template").innerHTML;
+        var card2Tmpl = Handlebars.compile(card2Src);
+
+        var card3Src = document.getElementById("card3Template").innerHTML;
+        var card3Tmpl = Handlebars.compile(card3Src);
+
+
+
+        var json = {'anketa':{'lastName':'фамилия111','firstName':'имя111','middleName':'отчество','male':'1','army':'1','dateBirth':'12','monthBirth':'Січень','yearBirth':'1925','id':'12345698','INN':'инн','serial':'АА','number':'123654','passportDate':'дата выдачи паспорта','givenBy':'кем выдан','citizenship':'гражданство','postgraduate':'on','adyunkture':'on','doctoral':'on','latestJob':'останее мисто работы','profession':'йпоасада','dateReasonDismissal':'дата и причина увольнения','pensionInfo':'дланные пенсии','actualPlace':'адрес фактчиеского прожианивая','registrationPlace':'прописка адреса','undefined':''},'education':{'0':{'educationalInstitutionName':'нметау ','diplomaSerialNumber':'диплом','endYear':'1980','profession':'специальность','qualification':'квалифыикаия','learningForm':'дневная'},'1':{'educationalInstitutionName':'диит','diplomaSerialNumber':'диплом диита','endYear':'2010','profession':'специальность диита','qualification':'квалификация диита','learningForm':'ночная'}},'pgeducation':{},'family':{'1':['мама','фио','1236'],'2':['папа','фио','1368'],'3':['сын','афио','1588']}};
+
+        document.getElementById("preview_education1").innerHTML = education1Tmpl(json);
+        document.getElementById("preview_education2").innerHTML = education2Tmpl(json);
+        document.getElementById("preview_postgraduate").innerHTML = postgraduateTmpl(json);
+        document.getElementById("preview_family").innerHTML = familyTmpl(json);
+        document.getElementById("preview_card1").innerHTML = card1Tmpl(json);
+      	document.getElementById("preview_card2").innerHTML = card2Tmpl(json);
+       	document.getElementById("preview_card3").innerHTML = card3Tmpl(json);
+
+    //]]>
+    </script>
+</body>
+</html>
