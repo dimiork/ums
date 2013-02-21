@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+      <meta charset="utf-8" />
+<title>Personal Card</title>
+<link href="css/cardStyle.css" type="text/css" rel="stylesheet" />
+<style type="text/css">
+        .tables {
+            border: 1px solid #999;
+            border-collapse: collapse;
+            font-family: sans-serif;
+            font-size: 0.8em;
+            width: 980px;
+        }
+        .tables thead {
+            border-color: black;
+            
+
+            background-color: #777;
+            font-size: 1em;
+            font-weight: bold;
+            text-align: left;
+            text-shadow: 1px 1px 1px #DDD;
+           
+            
+        }
+        .tables tbody tr:nth-child(even) {
+        	border-color: inherit;
+            background-color: #EEE; 
+        }
+        .tables tbody tr:hover {
+            background-color: #DDD; 
+        }
+        caption {
+            font-weight: bold;
+        }
+        td,
+        th {
+            padding: 4px;
+        }
+    </style>
+    <script type="text/javascript" src="handlebars.js"></script>
+</head>
+
+<body>
+<div id="allContent">
+
+<header>
+	<h3>Міністерство не дуже важкої промисловості</h3>
+	<p class="head">Типова форма</p>
+	<p class="head">Затверджено наказом Держкомстату та міністерства оборони</p>
+	<p class="head">України від 25.12.2009 р.</p>
+</header>
+
+
+<table border="1" id="mainTable">
+	<tr>
+		<td width="100px" align="center">Дата заповнення</td>
+		<td width="100px" align="center">Табельний номер</td>
+		<td width="200px" align="center">Індивідуальний ідентифікаційний номер</td>
+		<td width="100px" align="center">Стать (чоловіча, жіноча)</td>
+	</tr>
+	<tr>
+		<td height="20px"></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+
+
+<div id="photo">
+фото
+</div>
+
+<div id="data">
+<p class="nameCard">Особова картка працівника</p>
+<p class="allData">I. Загальні відомості</p>
+<div>1. Прізвище<span>  _______________________  </span>Ім&rsquo;я<span>  _______________________  </span>По-батькові<span>  ______________________________  </span></div>
+<div>2. Дата народження  &laquo;___&raquo;  ___________  19 ____ р.    <span id="nation">3. Громадянство  ______________________________________ </span></div>
+<div>4. Освіта (базова загальна середня, повна загальна середня, професійно-технічна, неповна вища, базова вища, повна вища)<br /><span>_____________________________________________________________________________________________________</span>
+
+
+
+
+<!-- BLOCK PREVIEW EDUCATION -->
+<div id="preview_education">This will get replaced by handlebars.js</div><br />
+
+</div>
+<div>5. Післядипломна професійна підготовка: навчання в
+		<input class="checkStudy" type="checkbox" />аспірантурі<input class="checkStudy" type="checkbox" />ад&rsquo;юконтурі<input class="checkStudy" type="checkbox" />докторонтурі<br />
+		необхідне відмітити (х)
+		
+
+
+<!-- BLOCK PREVIEW POSTGRADUATE -->
+		<div id="preview_postgraduate">This will get replaced by handlebars.js</div><br />
+</div>
+
+<div>6. Останнє місце роботи  _________________________________________________________________________________
+</div>
+
+<div>7. Посада (професія)  ___________________________________________________________________________________</div>
+
+<div>8. Дата та причина звільнення (скорочення штатів, за власним бажанням, за прогул та інші порушення, невідповідність займаній посаді тощо)___________________________________________________________________________________________<br />_____________________________________________________________________________________________________</div>
+
+<div>9. Відомості про отримання пенсії __________________________________________________________________________</div>
+
+<div>10. Родинний стан_______________________________________________________________________________________
+
+
+
+<!-- BLOCK PREVIEW FAMILY -->
+    <div id="preview_family">This will get replaced by handlebars.js</div><br />
+</div>
+
+<div>
+11. Місце фактичного проживання (область, місто, район, вулиця, №будинку, квартири, номер контактного телефону, поштовий індекс) ________________________________________________________________________________________________
+<br />______________________________________________________________________________________________________</div>
+
+<div>
+12. Місце проживання за державною реєстрацією _____________________________________________________________<br />______________________________________________________________________________________________________
+</div>
+
+<div>
+Паспорт: серія _____ № __________, ким виданий  _____________________________________________________________<br />
+________________________________ , дата видачі ___________________________________________________________
+</div>
+
+<div>
+<span id="military">II. Відомості про військовий облік </span>_____________________________________________________________________<br /><span class="militaryChoise">(військовозобов&rsquo;язаний, невійськовозобов&rsquo;язаний)</span>
+</div>
+
+
+</div>
+
+
+
+   
+
+    <script id="educationTemplate" type="text/x-handlebars-template">
+        <table id="education" class="tables">
+            
+            <thead>
+                <tr>
+                    <th>Назва освітнього закладу</th>
+                    <th>Диплом (свідоцтво), серія, номер</th>
+                    <th>Рік закінчення</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#education}}   
+                 {{#each .}}           
+                <tr>
+                 
+                 <tr>
+               
+                    <td>{{diplomaSerialNumber}}</td>
+                    <td>{{educationalInstitutionName}}</td>
+                    <td>{{endYear}}</td> 
+                    
+  
+                </tr>
+                {{/each}}   
+                {{/education}}   
+            </tbody>
+            <caption>{{leagueName}}</caption>
+            <thead>
+                <tr>
+                    <th>Спеціальність (професія) за дипломом (свідоцтвом)</th>
+                    <th>Кваліфікація за дипломом (свідоцтвом)   </th>
+                    <th>Форма навчання (денна, вечірня, заочна)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#education}}   
+                 {{#each .}}           
+                <tr>
+                 
+                 <tr>
+               
+                 
+                    <td>{{learningForm}}</td> 
+                    <td>{{profession}}</td> 
+                    <td>{{qualification}}</td> 
+  
+                </tr>
+                {{/each}}   
+                {{/education}}   
+            </tbody>
+        </table>
+    </script>
+
+    <script id="postgraduateTemplate" type="text/x-handlebars-template">
+        <table id="family" class="tables">
+            
+            <thead>
+                <tr>
+                    <th>Назва освітнього, наукового закладу</th>
+                    <th>Рік закінчення</th>
+                    <th>Науковий ступінь, учене звання</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#postgraduate}}   
+                 {{#each .}}           
+                <tr>
+                 
+                 <tr>
+               
+                    <td>{{[1]}}</td>
+                    <td>{{[2]}}</td>
+                    <td>{{[3]}}</td> 
+                    
+  
+                </tr>
+                {{/each}}   
+                {{/postgraduate}}   
+            </tbody>
+           
+           
+        </table>
+    </script>
+
+     <script id="familyTemplate" type="text/x-handlebars-template">
+        <table id="family" class="tables">
+            
+            <thead>
+                <tr>
+                    <th>Ступінь родинного зв’язку (склад сім’ї) </th>
+                    <th>П. І. Б.</th>
+                    <th>Рік народження</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#family}}   
+                 {{#each .}}           
+                <tr>
+                 
+                 <tr>
+               
+                    <td>{{[0]}}</td>
+                    <td>{{[1]}}</td>
+                    <td>{{[2]}}</td> 
+                    
+  
+                </tr>
+                {{/each}}   
+                {{/family}}   
+            </tbody>
+        </table>
+    </script>
+ 
+    <script type="text/javascript">
+    //<![CDATA[
+        var educationSrc = document.getElementById("educationTemplate").innerHTML;
+        var educationTmpl = Handlebars.compile(educationSrc);
+
+        var familySrc = document.getElementById("familyTemplate").innerHTML;
+        var familyTmpl = Handlebars.compile(familySrc);
+
+        var postgraduateSrc = document.getElementById("postgraduateTemplate").innerHTML;
+        var postgraduateTmpl = Handlebars.compile(postgraduateSrc);
+
+
+        var json = {
+    "anketa": {
+        "addressregistration": "1",
+        "adjuncture": "on",
+        "dateBirth": "1",
+        "doctor": "on",
+        "graduate": "on",
+        "lastName": "1",
+        "lastWork": "1",
+        "male": "1",
+        "middleName": "1",
+        "monthBirth": "Січень",
+        "name": "1",
+        "nation": "1",
+        "noArmy": "2",
+        "passport": "1",
+        "pension": "1",
+        "persNumber": "1",
+        "profWork": "1",
+        "reasonLast": "1",
+        "residenceaddress": "1",
+        "tabNumber": "1",
+        "undefined": "",
+        "yearBirth": "1"
+    },
+    "education": {
+        "test1": { 
+            "diplomaSerialNumber": "2",
+            "educationalInstitutionName": "2",
+            "endYear": "2",
+            "learningForm": "2",
+            "profession": "2",
+            "qualification": "2"
+        },
+        "1": {
+            "diplomaSerialNumber": "2",
+            "educationalInstitutionName": "2",
+            "endYear": "2",
+            "learningForm": "2",
+            "profession": "2",
+            "qualification": "2"
+        }
+    },
+    "family": {
+        "1": {
+            "0": "сын",
+            "1": "Пупкин Вячеслав Длинноотчественный",
+            "2": "4"
+        },
+        "2": {
+            "0": "4",
+            "1": "4",
+            "2": "4"
+        },
+        "3": {
+            "0": "4",
+            "1": "4",
+            "2": "4"
+        }
+    },
+    "postgraduate": {
+        "1": {
+            "0": "3",
+            "1": "3",
+            "2": "3"
+        },
+        "2": {
+            "0": "3",
+            "1": "3",
+            "2": "3"
+        },
+        "3": {
+            "0": "3",
+            "1": "3",
+            "3": "3"
+        }
+    }
+};
+        document.getElementById("preview_education").innerHTML = educationTmpl(json);
+          document.getElementById("preview_postgraduate").innerHTML = postgraduateTmpl(json);
+        document.getElementById("preview_family").innerHTML = familyTmpl(json);
+      
+       // document.getElementById("preview_education").innerHTML = educationTmpl(json);
+       // document.getElementById("preview_education").innerHTML = educationTmpl(json);
+       // document.getElementById("preview_education").innerHTML = educationTmpl(json);
+    //]]>
+    </script>
+</body>
+</html>
