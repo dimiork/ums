@@ -136,12 +136,12 @@
 						Прізвище <br />
 						<input type="text" size="40" id="lastName" class="fields" /><br />
 						Ім&rsquo;я <br />
-						<input type="text" size="40" id="name" class="fields"  /><br />
+						<input type="text" size="40" id="firstName" class="fields"  /><br />
 						По-батькові <br />
 						<input type="text" size="40" id="middleName" class="fields" /><br />
 						<p></p>
 						Стать: <br />
-						<input type="radio" name="sex" value="sex1" id="male" class="fields" />чоловіча<input type="radio" name="sex" value="sex2" id="female" />жіноча<br />
+						<input type="radio" name="sex" id="male" class="fields" />чоловіча<input type="radio" name="sex" id="female" />жіноча<br />
 						<p></p>
 						Військовозабов&rsquo;язаний <br />
 						<input type="radio" name="army" value="army1" id="yesArmy" class="fields" />так<input type="radio" name="army" value="army2" id="noArmy"/>ні<br />
@@ -168,15 +168,15 @@
 						Табельний номер <br />
 						<input type="text" size="40" id="tabNumber" class="fields" /><br />
 						Індивідуальний номер <br />
-						<input type="text" size="40" id="persNumber" class="fields" /><br />
+						<input type="text" size="40" id="INN" class="fields" /><br />
 						<p></p>
 						Паспортні дані <br />
-						серія<input type="text" size="5" id="passportSeria" class="fields"  /> номер <input type="text" size="13" id="passportNumber" /><br />
-						ким видано<input type="text" size="26" id="passportWhom" class="fields" /><br />
-						дата видачі <input type="text" size="25" id="passportWhen" class="fields" /><br />
+						серія<input type="text" size="5" id="serial" class="fields"  /> номер <input type="text" size="13" id="number" /><br />
+						ким видано<input type="text" size="26" id="givenBy" class="fields" /><br />
+						дата видачі <input type="text" size="25" id="passportDate" class="fields" /><br />
 						<p></p>
 						Громадянство <br />
-						<input type="text" size="40" id="nation" class="fields" /><br />
+						<input type="text" size="40" id="citizenship" class="fields" /><br />
 					</div>
 			</div>
 			<!--End Personal Info-->
@@ -213,9 +213,9 @@
        
          <div id="check">
 		 <p>Післядипломна професійна полготовка: навчання в:</p>
-		   <label><input id="graduate" type="checkbox" class="fields" />Аспірантура</label><br />
-		   <label><input id="adjuncture" type="checkbox" class="fields" />Ад&rsquo;юконтура</label><br />
-		   <label><input id="doctor" type="checkbox" class="fields" />Докторонтура</label><br />
+		   <label><input id="postgraduate" type="checkbox" class="fields" />Аспірантура</label><br />
+		   <label><input id="adyunkture" type="checkbox" class="fields" />Ад&rsquo;юконтура</label><br />
+		   <label><input id="doctoral" type="checkbox" class="fields" />Докторонтура</label><br />
 		</div>	   
           <table id="pgeducation_table">
            <tr>
@@ -249,13 +249,13 @@
 				<div id="exp">
 					<div id="expData">
 						Останнє місце роботи<br />
-						<input type="text" size="90" id="lastWork" class="fields" /><br />
+						<input type="text" size="90" id="latestJob" class="fields" /><br />
 						Посада <br />
-						<input type="text" size="90" id="profWork" class="fields" /><br />
+						<input type="text" size="90" id="profession" class="fields" /><br />
 						Дата, причина звільнення<br />
-						<input type="text" size="90" id="reasonLast" class="fields" /><br />
+						<input type="text" size="90" id="dateReasonDismissal" class="fields" /><br />
 						Дані стосовно отримання пенсії<br />
-						<input type="text" size="90" id="pension" class="fields" /><br />
+						<input type="text" size="90" id="pensionInfo" class="fields" /><br />
 					</div>
 				</div>
 			</div>
@@ -292,9 +292,9 @@
 				<div id="homeData">
 					<p>Адреса фактичного місця проживання</p>
 					<p id="detail">(область, місто, район, вулиця, № будинку, № квартири, номер контактного телефону, індекс)</p>
-					<input type="text" size="140" class="fields" /><br />
+					<input type="text" size="140" id="actualPlace" class="fields" /><br />
 					<p>Адреса прописки</p>
-					<input type="text" size="140" class="fields" /><br />
+					<input type="text" size="140" id="registrationPlace" class="fields" /><br />
 				</div>
 			</div>
 			<!--End habitation-->

@@ -8,8 +8,6 @@ function PgeducationController() {
 		 function inittest() {
 			console.log("Family Data is saved to Model");
 			pgeducation_controller.toModel();
-			//card_controller.fromModel();
-			//card_controller.test()
 		}
 	
 	// добавить поля для ввода текста
