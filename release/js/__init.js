@@ -2,6 +2,7 @@ var card_controller = new CardController();
 var education_controller = new EducationController();
 var family_controller = new FamilyController();
 var pgeducation_controller = new PgeducationController();
+var view_controller = new ViewController();
 var main_controller = new MainController();
 
 
@@ -12,9 +13,10 @@ window.onload = function () {
 	searchButton.addEventListener("click", initSearch, false);
 		
 		 function initSearch() {
-		 	console.log(1);
 			var elems = document.getElementsByClassName("page");
-			elems.style.display = "none";
+			for(var i = 0; i < elems.length; i++) {   
+				elems[i].style.display = "none";
+			}
 			search.style.display = "block";
 		
 		}
@@ -23,7 +25,9 @@ window.onload = function () {
 		
 		 function initAdd() {
 			var elems = document.getElementsByClassName("page");
-			elems.style.display = "none";
+			for(var i = 0; i < elems.length; i++) {   
+				elems[i].style.display = "none";
+			}
 			add.style.display = "block";
 			
 		}

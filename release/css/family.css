@@ -1,0 +1,53 @@
+#family_table {
+  border-spacing:0;
+  margin:20px auto;
+  padding:0;
+}
+
+#family_table input {
+  margin:0;
+  padding:3px;
+  outline: none;
+}
+
+#family_table tr, #family_table td {
+  padding:0;
+}
+
+#family_table th {
+border:1px solid #cccccc;
+}
+
+
+#add_button {
+  width:60px;
+  margin:10px auto;	
+}
+
+
+#delete_button {	
+width:25px;
+padding-left:10px;	
+}
+
+
+#add_family {
+  font-weight:bold;	
+  padding:5px;	
+  width:40px;
+}
+
+#family_table th:last-child{
+ border:none;	
+}
+
+.delete_family {
+font-weight:bold;
+width:25px;
+}
+
+
+
+
+
+

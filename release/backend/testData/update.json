@@ -2,11 +2,11 @@
   "anketa": {
     "date": "2013-02-14",
     "INN": "1234567890",
-    "sex": "0",
+    "sex": "1",
     "photo": "photo.jpg",
-    "lastName": "Ivanova",
-    "firstName": "Ekaterina",
-    "middleName": "Petrovna",
+    "lastName": "Cornushov",
+    "firstName": "Sergey1",
+    "middleName": "Vladimirovich1",
     "birthDate": "1989-03-05",
     "citizenship": "Ukr",
     "education": "5",
@@ -28,7 +28,7 @@
   },
   "education": [
     {
-      "educationalInstitutionName": "DDYVS",
+      "educationalInstitutionName": "DDYVS1",
       "diplomaSerialNumber": "5689",
       "endYear": "2011-00-00",
       "profession": "Lawyer",
@@ -36,7 +36,7 @@
       "learningForm": "2"
     },
     {
-      "educationalInstitutionName": "Nobel Uni",
+      "educationalInstitutionName": "Nobel Uni1",
       "diplomaSerialNumber": "987",
       "endYear": "2012-00-00",
       "profession": "Arbitration administrator",
@@ -44,7 +44,7 @@
       "learningForm": "2"
     },
     {
-      "educationalInstitutionName": "DKKA",
+      "educationalInstitutionName": "DKKA1",
       "diplomaSerialNumber": "744",
       "endYear": "2012-00-00",
       "profession": "Advocate",
@@ -54,16 +54,16 @@
   ],
   "postgraduate": [
     {
-      "educationalInstitutionName": "DDYVS",
-      "pg_endYear": "2011-00-00",
+      "educationalInstitutionName": "DDYVS1",
+      "endYear": "2011-00-00",
       "degree": "High"
     }
   ],
   "family": [
     {
-      "familyRelationship": "None",
-      "fam_fullName": "zero",
-      "fam_birthDate": "2011-00-00"
+      "familyRelationship": "None1",
+      "fullName": "zero",
+      "birthDate": "2011-00-00"
     }
   ]
 }

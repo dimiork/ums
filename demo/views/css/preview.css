@@ -1,0 +1,90 @@
+﻿body{
+	background-color:#FAF0E6;
+	font-family:sans-serif;
+}
+
+#allContent{
+	width:980px;
+	/*border:1px gray dotted;*/
+	margin:0 auto;
+}
+
+h3{
+	text-align:center;
+}
+
+.head{
+	text-align:center;
+}
+
+.block {
+            line-height: 2;
+        }
+        
+#mainTable{
+	margin-left:150px;
+}
+
+#photo{
+	width:120px;
+	height:150px;
+	border:1px solid black;
+	float:right;
+	margin-top:-90px;
+	margin-right:150px;
+}
+
+.nameCard{
+	text-transform:uppercase;
+	font-weight:bold;
+	text-align:center;
+	margin-left:100px;
+}
+
+.allData{
+	text-transform:uppercase;
+	font-weight:bold;
+	font-size:11pt;
+}
+
+#data{
+	line-height:2;
+	margin-bottom:50px;
+}
+
+#nation{
+	margin-left:57px;
+}
+
+#study{
+	margin:20px 0 20px 0;
+	font-size:10pt;
+	line-height:1;
+}
+
+.checkStudy{
+	margin-left:20px;
+}
+
+#stupen{
+	margin:20px 0 20px 0;
+	font-size:10pt;
+	line-height:1;
+}
+
+#familyTable{
+	margin:20px 0 20px 0;
+	font-size:10pt;
+	line-height:1;
+}
+
+#military{
+	text-transform:uppercase;
+	font-weight:bold;
+	font-size:11pt;
+	margin-top:15px;
+}
+
+.militaryChoise{
+	margin-left:350px;
+}
