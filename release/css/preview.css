@@ -1,0 +1,97 @@
+﻿body{
+	background-color:#FAF0E6;
+	font-family:sans-serif;
+}
+
+#preview_wrapper{
+	width:980px;
+	/*border:1px gray dotted;*/
+	margin:0 auto;
+}
+
+h3{
+	text-align:center;
+}
+
+.head{
+	text-align:center;
+}
+
+.block {
+    line-height: 2;
+        }
+        
+#mainTable{
+	margin-left:150px;
+}
+
+#photo{
+	width:200px;
+	height:250px;
+	border:1px solid black;
+	float:right;
+	margin-top:-100px;
+}
+
+.nameCard{
+	text-transform:uppercase;
+	font-weight:bold;
+	text-align:center;
+	margin-left:100px;
+}
+
+.allData{
+	text-transform:uppercase;
+	font-weight:bold;
+	font-size:11pt;
+}
+
+
+
+#nation{
+	margin-left:57px;
+}
+
+
+
+
+
+#military{
+	text-transform:uppercase;
+	font-weight:bold;
+}
+
+
+ .tables {
+            border: 1px solid #999;
+            border-collapse: collapse;
+            font-family: sans-serif;
+            font-size: 0.8em;
+            width: 980px;
+        }
+        .tables thead {
+            border-color: black;
+            
+
+            _background-color: #777;
+            font-size: 1em;
+            font-weight: bold;
+            text-align: left;
+            text-shadow: 1px 1px 1px #DDD;
+           
+            
+        }
+        .tables tbody tr:nth-child(even) {
+            border-color: inherit;
+            _background-color: #EEE; 
+        }
+        .tables tbody tr:hover {
+            _background-color: #DDD; 
+        }
+        caption {
+            font-weight: bold;
+        }
+        td,
+        th {
+            padding: 4px;
+        }

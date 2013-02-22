@@ -12,7 +12,9 @@ function CardController() {
 		
 		previewButton.addEventListener("click", initclick, false);
 		function initclick() {
-			console.log("Card Data is saved to Model");
+
+			document.getElementById('light').style.display='block';
+			document.getElementById('fade').style.display='block'
 			var view_controller = new ViewController();
 			view_controller.show_preview(main_controller.getData());
 		}

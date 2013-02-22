@@ -1,0 +1,20 @@
+/// add
+curl -X POST -d @add.json http://localhost:8888/pj/2/index.php/add
+{"status":"OK","id":"47"}
+{"status":"error","message":"There is no data to process."}
+///
+
+/// update
+curl -X POST -d @update.json http://localhost:8888/pj/2/index.php/update/46
+{"status":"OK"}
+///
+
+/// search
+{"name":"petr","age":{"greater":22,"less":22,"interval":[15,20]},"sex":0,"education":5,"army":0}
+
+//login
+curl -X POST http://localhost:8888/pj/2/index.php/login -c cookie -d {"login":"demo","password":"demo"}
+{"status":"OK","name":"Demo User"}
+
+
+http://localhost:8888/pj/2/index.php/add?XDEBUG_SESSION_START

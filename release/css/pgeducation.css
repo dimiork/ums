@@ -1,0 +1,50 @@
+#pgeducation_table{
+  border-spacing:0;
+  margin:20px auto;
+  padding:0;
+  width:450px;
+}
+
+#pgeducation_table input {
+  margin:0;
+  padding:3px;
+  outline: none;
+}
+
+
+#pgeducation_table tr, #pgeducation_table td {
+  padding:0;
+}
+
+#pgeducation_table th {
+border:1px solid #cccccc;
+}
+
+#pgeducation_table th:last-child{
+ border:none;	
+}
+
+#add_button2 {
+  width:60px;
+  margin:10px auto;	
+}
+
+
+#delete_button2 {	
+width:25px;
+padding-left:10px;	
+}
+
+
+#add_pgeducation {
+  font-weight:bold;	
+  padding:5px;	
+  width:40px;
+}
+
+
+.delete_pgeducation{
+font-weight:bold;
+width:25px;
+}
+

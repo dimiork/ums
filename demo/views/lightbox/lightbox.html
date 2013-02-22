@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Card</title>
+<style>
+        .black_overlay{
+            display: none;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 1500;
+            background-color: black;
+            z-index:1001;
+            -moz-opacity: 0.8;
+            opacity:.80;
+            filter: alpha(opacity=80);
+        }
+        .white_content {
+            display: none;
+            position: absolute;
+            top: 5%;
+            left: 10%;
+            width: 1000px;
+            padding: 16px;
+            border: 16px solid orange;
+            background-color: white;
+            z-index:1002;
+            overflow: auto;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+	<div id="allContent">
+	
+	
+		
+
+
+<div id="bottom">
+			<input type="button" value="Переглянути" id="previewButton" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">
+			<input type="button" value="Зберегти" id="saveButton">
+		</div>
+
+		<footer>
+			&copy; All rights reserved, Troy Team, 2013
+		</footer>
+
+		
+		
+	</div>
+	
+
+	
+
+
+
+	<div id="light" class="white_content">
+		<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">Close</a>
+<!-- START PREVIEW -->
+
+
+<header>
+	<h3>Міністерство не дуже важкої промисловості</h3>
+	<p class="head">Типова форма</p>
+	<p class="head">Затверджено наказом Держкомстату та міністерства оборони</p>
+	<p class="head">України від 25.12.2009 р.</p>
+</header>
+
+
+<table border="1" id="mainTable">
+	<tr>
+		<td width="100px" align="center">Дата заповнення</td>
+		<td width="100px" align="center">Табельний номер</td>
+		<td width="200px" align="center">Індивідуальний ідентифікаційний номер</td>
+		<td width="100px" align="center">Стать (чоловіча, жіноча)</td>
+	</tr>
+	<tr>
+		<td height="20px"></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+
+
+<div id="photo">
+фото
+</div>
+
+<div id="data">
+<p class="nameCard">Особова картка працівника</p>
+<p class="allData">I. Загальні відомості</p>
+<div>1. Прізвище<span>  _______________________  </span>Ім&rsquo;я<span>  _______________________  </span>По-батькові<span>  ______________________________  </span></div>
+<div>2. Дата народження  &laquo;___&raquo;  ___________  19 ____ р.    <span id="nation">3. Громадянство  ______________________________________ </span></div>
+<div>4. Освіта (базова загальна середня, повна загальна середня, професійно-технічна, неповна вища, базова вища, повна вища)<br /><span>_____________________________________________________________________________________________________</span>
+<table border="1" align="center" id="study">
+	<tr>
+		<td width="400px">Назва освітнього закладу</td>
+		<td width="300px">Диплом (свідоцтво), серія, номер</td>
+		<td width="180px">Рік закінчення</td>
+	</tr>
+	<tr>
+		<td height="20px"></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td height="20px"></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>Спеціальність (професія) за дипломом (свідоцтвом)</td>
+		<td>Кваліфікація за дипломом (свідоцтвом)</td>
+		<td>Форма навчання (денна, вечірня, заочна)</td>
+	</tr>
+	<tr>
+		<td height="20px"></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td height="20px"></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+</div>
+<div>5. Післядипломна професійна підготовка: навчання в
+		<input class="checkStudy" type="checkbox" />аспірантурі<input class="checkStudy" type="checkbox" />ад&rsquo;юконтурі<input class="checkStudy" type="checkbox" />докторонтурі<br />
+		необхідне відмітити (х)
+		<table border="1" align="center" id="stupen">
+			<tr>
+				<td width="400px">Назва освітнього, наукового закладу</td>
+				<td width="180px">Рік закінчення</td>
+				<td width="300px">Науковий ступінь, учене звання</td>
+			</tr>
+			<tr>
+		<td height="20px"></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td height="20px"></td>
+		<td></td>
+		<td></td>
+	</tr>
+		</table>
+</div>
+
+<div>6. Останнє місце роботи  _________________________________________________________________________________
+</div>
+
+<div>7. Посада (професія)  ___________________________________________________________________________________</div>
+
+<div>8. Дата та причина звільнення (скорочення штатів, за власним бажанням, за прогул та інші порушення, невідповідність займаній посаді тощо)___________________________________________________________________________________________<br />_____________________________________________________________________________________________________</div>
+
+<div>9. Відомості про отримання пенсії __________________________________________________________________________</div>
+
+<div>10. Родинний стан_______________________________________________________________________________________
+<table border="1" align="center" id="familyTable">
+	<tr>
+		<td width="300px">Ступінь родинного зв&rsquo;язку (склад сім&rsquo;ї)</td>
+		<td width="400px">П. І. Б.</td>
+		<td width="180px">Рік народження</td>
+	</tr>
+				<tr>
+		<td height="20px"></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td height="20px"></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+</div>
+
+<div>
+11. Місце фактичного проживання (область, місто, район, вулиця, №будинку, квартири, номер контактного телефону, поштовий індекс) ________________________________________________________________________________________________
+<br />______________________________________________________________________________________________________</div>
+
+<div>
+12. Місце проживання за державною реєстрацією _____________________________________________________________<br />______________________________________________________________________________________________________
+</div>
+
+<div>
+Паспорт: серія _____ № __________, ким виданий  _____________________________________________________________<br />
+________________________________ , дата видачі ___________________________________________________________
+</div>
+
+<div>
+<span id="military">II. Відомості про військовий облік </span>_____________________________________________________________________<br /><span class="militaryChoise">(військовозобов&rsquo;язаний, невійськовозобов&rsquo;язаний)</span>
+</div>
+
+
+</div>
+
+<!-- END of Preview -->
+	</div>
+        <div id="fade" class="black_overlay"></div>
+
+
+
+</body>
+</html>

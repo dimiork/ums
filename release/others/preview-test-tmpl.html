@@ -1,0 +1,228 @@
+<div id="preview_wrapper">
+
+<header>
+	<h3>Міністерство не дуже важкої промисловості</h3>
+	<p class="head">Типова форма</p>
+	<p class="head">Затверджено наказом Держкомстату та міністерства оборони</p>
+	<p class="head">України від 25.12.2009 р.</p>
+</header>
+
+
+<table border="1" id="mainTable">
+	<tr>
+		<td width="100px" align="center">Дата заповнення</td>
+		<td width="100px" align="center">Табельний номер</td>
+		<td width="200px" align="center">Індивідуальний ідентифікаційний номер</td>
+		<td width="100px" align="center">Стать (чоловіча, жіноча)</td>
+	</tr>
+	<tr>
+		<td height="20px"></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+
+
+<div id="photo">
+фото
+</div>
+
+<div id="data" class="block">
+<p class="nameCard">Особова картка працівника</p>
+<p class="allData">I. Загальні відомості</p>
+
+        <div id="preview_card1"></div>
+
+
+
+
+<!-- BLOCK PREVIEW EDUCATION -->
+        <div id="preview_education1"></div>
+        <div id="preview_education2"></div><br />
+</div>
+<div>5. Післядипломна професійна підготовка: навчання в
+		<input class="checkStudy" type="checkbox" />аспірантурі<input class="checkStudy" type="checkbox" />ад&rsquo;юконтурі<input class="checkStudy" type="checkbox" />докторонтурі<br />
+		необхідне відмітити (х)
+		
+
+
+<!-- BLOCK PREVIEW POSTGRADUATE -->
+		<div id="preview_postgraduate"></div><br />
+</div>
+
+        <div id="preview_card2" class="block"></div>
+
+
+<!-- BLOCK PREVIEW FAMILY -->
+        <div id="preview_family"></div><br />
+
+        <div id="preview_card3" class="block"></div>
+</div>
+
+
+
+
+
+
+</div>
+
+
+	<script id="card1Template" type="text/x-handlebars-template">
+		 <div>1. Прізвище<span>  {{ anketa.lastName }}  </span>Ім&rsquo;я<span>  {{ anketa.firstName }}  </span>По-батькові<span>  {{anketa.middleName}}  </span></div>
+		<div>2. Дата народження  &laquo;{{anketa.dateBirth}}&raquo;  {{anketa.monthBirth}}  {{anketa.yearBirth}} р.    <span id="nation">3. Громадянство  
+        {{anketa.citizenship}} </span></div>
+		<div>4. Освіта !!!базова!!! <!-- (базова загальна середня, повна загальна середня, професійно-технічна, неповна вища, базова вища, повна вища) --><br />
+    </script>
+
+
+	<script id="card2Template" type="text/x-handlebars-template">
+		<div>6. Останнє місце роботи  {{anketa.latestJob}}
+		</div>
+
+		<div>7. Посада (професія)  {{anketa.profession}}</div>
+
+		<div>8. Дата та причина звільнення: 
+        {{ anketa.dateReasonDismissal }}</div>
+
+		<div>9. Відомості про отримання пенсії {{anketa.pensionInfo}}</div>
+
+		<div>10. Родинний стан {{anketa.familyStatus}}
+	</script>
+
+	<script id="card3Template" type="text/x-handlebars-template">
+		<div>
+		11. Місце фактичного проживання: 
+        {{anketa.actualPlace}}
+		</div>
+
+		<div>
+		12. Місце проживання за державною реєстрацією: {{anketa.registrationPlace}}
+		</div>
+
+		<div>
+		Паспорт: серія {{anketa.serial}} № {{anketa.number}}, ким виданий  {{anketa.givenBy}} , дата видачі {{anketa.passportDate}}
+		</div>
+		<div>
+		<span id="military">II. Відомості про військовий облік </span>{{anketa.army}}
+		</div>
+	 </script>
+
+    <script id="education1Template" type="text/x-handlebars-template">
+        <table border="1" id="education1" class="tables">
+            
+            <thead>
+                <tr>
+                    <th>Назва освітнього закладу</th>
+                    <th>Диплом (свідоцтво), серія, номер</th>
+                    <th>Рік закінчення</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#education}}   
+                 {{#each .}}           
+                <tr>
+                 
+                 <tr>
+               
+                    <td>{{educationalInstitutionName}}</td>
+                    <td>{{diplomaSerialNumber}}</td>
+                    <td>{{endYear}}</td> 
+                    
+  
+                </tr>
+                {{/each}}   
+                {{/education}}   
+            </tbody>
+                </table>
+    </script>
+
+    <script id="education2Template" type="text/x-handlebars-template">
+        <table border="1" id="education2" class="tables">
+       <thead>
+                <tr>
+                    <th>Спеціальність (професія) за дипломом (свідоцтвом)</th>
+                    <th>Кваліфікація за дипломом (свідоцтвом)   </th>
+                    <th>Форма навчання (денна, вечірня, заочна)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#education}}   
+                 {{#each .}}           
+                <tr>
+                 
+                 <tr>
+               
+                 
+                    <td>{{profession}}</td> 
+                    <td>{{qualification}}</td> 
+                    <td>{{learningForm}}</td> 
+  
+                </tr>
+                {{/each}}   
+                {{/education}}   
+            </tbody>
+   </table>
+    </script>
+
+    <script id="postgraduateTemplate" type="text/x-handlebars-template">
+        <table border="1" id="family" class="tables">
+            
+            <thead>
+                <tr>
+                    <th>Назва освітнього, наукового закладу</th>
+                    <th>Рік закінчення</th>
+                    <th>Науковий ступінь, учене звання</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#postgraduate}}   
+                 {{#each .}}           
+                <tr>
+                 
+                 <tr>
+               
+                    <td>{{[0]}}</td>
+                    <td>{{[1]}}</td>
+                    <td>{{[2]}}</td> 
+                    
+  
+                </tr>
+                {{/each}}   
+                {{/postgraduate}}   
+            </tbody>
+           
+           
+        </table>
+    </script>
+
+     <script id="familyTemplate" type="text/x-handlebars-template">
+        <table border="1" id="family" class="tables">
+            
+            <thead>
+                <tr>
+                    <th>Ступінь родинного зв’язку (склад сім’ї) </th>
+                    <th>П. І. Б.</th>
+                    <th>Рік народження</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#family}}   
+                 {{#each .}}           
+                <tr>
+                 
+                 <tr>
+               
+                    <td>{{[0]}}</td>
+                    <td>{{[1]}}</td>
+                    <td>{{[2]}}</td> 
+                    
+  
+                </tr>
+                {{/each}}   
+                {{/family}}   
+            </tbody>
+        </table>
+    </script>
+ 
+   

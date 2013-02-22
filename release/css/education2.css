@@ -1,0 +1,16 @@
+#education2 {
+	position: relative;
+	z-index: 1;
+	right: -18%;
+}
+
+#education2 div div input {
+width: 200px;
+}
+
+#education2 span {
+	display: inline-block;
+	width: 202px;
+	/* border: 1px solid;  */
+	margin-right: 4px;
+}
