@@ -1,6 +1,6 @@
 function CardModel() {
   var content = {};
-  var toCheck = {name:"",lastName:"",middleName:"",dateBirth:"",monthBirth:"",yearBirth:"",persNumber:"",passport:""};
+  var toCheck = {name:"",lastName:"",middleName:"",dateBirth:"",monthBirth:"",yearBirth:"",persNumber:"",serial:"",number:"",givenBy:"",passportDate:""};
   
   this.setValue = function(key, value) {
     if (value) {	
@@ -54,10 +54,25 @@ function CardModel() {
 		    var check_inn = inn_pattern.test(content[key]);
 		    if (check_inn == false) check.push(key);
 		    break;
-		  case 'passport':
-		    var passp_pattern = /[А-Яа-я]{2}[0-9]{6}/;
+		  case 'serial':
+		    var seria_pattern = /[А-Яа-я]{2}/;
+		    var check_seria = seria_pattern.test(content[key]);
+		    if (check_seria == false) check.push(key);
+		    break;
+		  case 'number':
+		    var num_pattern = /[0-9]{6}/;
+		    var check_num = num_pattern.test(content[key]);
+		    if (check_num == false) check.push(key);
+		    break;
+		  case 'givenBy':
+		    var given_pattern = /[А-Яа-я]+/;
+		    var check_given = given_pattern.test(content[key]);
+		    if (check_given == false) check.push(key);
+		    break;
+		  case 'passportDate':
+		    var passp_pattern = /[А-Яа-я]+/;
 		    var check_passp = passp_pattern.test(content[key]);
-		    if (check_passp == false) check.push(key);
+		    if (check_pasp == false) check.push(key);
 		    break;
 		  }	
 		}
